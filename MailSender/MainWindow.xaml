@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Отправитель писем" Height="263" Width="671">
+    <Canvas>
+        <Label Content="От кого" Canvas.Left="15" Canvas.Top="12"/>
+        <TextBox x:Name="TbFrom" Width="200" Canvas.Left="67" Canvas.Top="16"/>
+        <Label Content="Кому" Canvas.Left="29" Canvas.Top="35"/>
+        <TextBox x:Name="TbTo" Canvas.Left="67" Canvas.Top="39" Width="200"/>
+        <Label x:Name="LbServer" Content="Сервер" Canvas.Left="337" Canvas.Top="12"/>
+        <TextBox x:Name="TbServerAddress" Canvas.Left="429" Canvas.Top="16" Width="200"/>
+        <TextBox x:Name="TbServerPort" Canvas.Left="429" Canvas.Top="40" Width="200"/>
+        <TextBox x:Name="TbLogin" Canvas.Left="429" Canvas.Top="65" Width="200"/>
+        <PasswordBox x:Name="TbPassword" Canvas.Left="429" Canvas.Top="88" Width="200"/>
+        <TextBox x:Name="TbText" Canvas.Left="18" Canvas.Top="97" Height="110" Width="311" TextWrapping="Wrap" AcceptsReturn="True"/>
+        <Label x:Name="LbServerAddress" Content="Адрес" Canvas.Left="383" Canvas.Top="12"/>
+        <Label x:Name="LbServerPort" Content="Порт" Canvas.Left="389" Canvas.Top="35"/>
+        <Label x:Name="LbLogin" Content="Имя пользователя" Canvas.Left="315" Canvas.Top="61"/>
+        <Label x:Name="LbPassword" Content="Пароль" Canvas.Left="375" Canvas.Top="84"/>
+        <Label x:Name="LbSsl" Content="SSL" Canvas.Left="398" Canvas.Top="108"/>
+        <CheckBox Canvas.Left="429" Canvas.Top="113"></CheckBox>
+        <Button x:Name="btnSend" Content="Отправить" Canvas.Left="337" Canvas.Top="187"/>
+    </Canvas>
 </Window>
