@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Net;
-using System.Net.Mail;
 using System.Windows;
+using MailSenderWpf;
 
 namespace MailSender
 {
@@ -10,33 +9,22 @@ namespace MailSender
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private readonly MailSenderObj _sender;
+
 		public MainWindow()
 		{
 			InitializeComponent();
+			_sender = new MailSenderObj();
 		}
 
 		private void BtnSend_OnClick(object sender, RoutedEventArgs e)
 		{
-			var mailSender = new MailAddress(TbFrom.Text, TbFrom.Text);
-			var recipient = new MailAddress(TbTo.Text);
-
-			using var message = new MailMessage(mailSender, recipient)
+			if (_sender.Send(TbFrom.Text, TbFrom.Text, TbSubject.Text,
+				TbText.Text, TbServerAddress.Text, Convert.ToInt32(TbServerPort.Text),
+				TbLogin.Text, TbPassword.SecurePassword))
 			{
-				Subject = TbSubject.Text,
-				Body = TbText.Text,
-			};
-
-			using (var client = new SmtpClient(TbServerAddress.Text, Convert.ToInt32(TbServerPort.Text)))
-			{
-				var login = TbLogin.Text;
-				var password = TbPassword.SecurePassword;
-
-				client.Credentials = new NetworkCredential(login, password);
-				client.EnableSsl = true;
-				client.Send(message);
+				MessageBox.Show(this, "Письмо отправлено", "Внимание");
 			}
-
-			MessageBox.Show(this, "Письмо отправлено", "Внимание");
 		}
 	}
 }
