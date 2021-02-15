@@ -23,6 +23,8 @@
         <Label x:Name="LbPassword" Content="Пароль" Canvas.Left="375" Canvas.Top="84"/>
         <Label x:Name="LbSsl" Content="SSL" Canvas.Left="398" Canvas.Top="108"/>
         <CheckBox Canvas.Left="429" Canvas.Top="113"></CheckBox>
-        <Button x:Name="btnSend" Content="Отправить" Canvas.Left="337" Canvas.Top="187"/>
+        <Button x:Name="BtnSend" Content="Отправить" Canvas.Left="337" Canvas.Top="187" Click="BtnSend_OnClick"/>
+        <TextBox x:Name="TbSubject" Canvas.Left="67" Canvas.Top="74" Width="200"/>
+        <Label x:Name="LbSubject" Content="Тема" Canvas.Left="25" Canvas.Top="69"/>
     </Canvas>
 </Window>
