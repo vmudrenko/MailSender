@@ -19,7 +19,7 @@ namespace MailSender
 
 		private void BtnSend_OnClick(object sender, RoutedEventArgs e)
 		{
-			if (_sender.Send(TbFrom.Text, TbFrom.Text, TbSubject.Text,
+			if (_sender.Send(TbFrom.Text, TbTo.Text, TbSubject.Text,
 				TbText.Text, TbServerAddress.Text, Convert.ToInt32(TbServerPort.Text),
 				TbLogin.Text, TbPassword.SecurePassword))
 			{
