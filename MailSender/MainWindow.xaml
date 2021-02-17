@@ -8,14 +8,14 @@
         Title="Отправитель почты" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="31*"/>
-            <RowDefinition Height="33*"/>
             <RowDefinition Height="32*"/>
-            <RowDefinition Height="31*"/>
             <RowDefinition Height="32*"/>
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="33*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="32*"/>
             <RowDefinition Height="184*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -37,7 +37,7 @@
         <TextBox Grid.Row="4" Grid.Column="1" x:Name="TbLogin" Margin="0,5,0,0"/>
         <PasswordBox Grid.Row="5" Grid.Column="1" x:Name="TbPassword" Margin="0,5,0,0"/>
         <CheckBox Grid.Row="6" Grid.Column="1" x:Name="CbSsl" Margin="0,5,0,0"/>
-        <Button Grid.Row="7" Grid.Column="1" x:Name="BtnSend" Margin="10,0,10,10" Click="BtnSend_OnClick">Отправить</Button>
+        <Button Grid.Row="6" Grid.Column="1" x:Name="BtnSend" Margin="10,29,10,10" Click="BtnSend_OnClick" Grid.RowSpan="2">Отправить</Button>
         <DockPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="9">
             <Label DockPanel.Dock="Top" Margin="10,0,10,0">Тема</Label>
             <TextBox x:Name="TbSubject" DockPanel.Dock="Top" Margin="10,0,10,0"></TextBox>
